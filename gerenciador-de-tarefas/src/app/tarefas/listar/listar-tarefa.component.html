@@ -13,15 +13,16 @@
   </th>
   </tr>
   <tr *ngFor="let tarefa of tarefas">
-    <td
-      [class.sucess]="!tarefa.concluida">
+    <td [tarefaConcluida]="tarefa.concluida"
+      [class.success]="!tarefa.concluida">
       {{ tarefa.nome }}
     </td>
     <td style="width: 70px" class="text-center">
       <input 
         type="checkbox"
         [value]="tarefa.id"
-        [checked]="tarefa.concluida">
+        [checked]="tarefa.concluida"
+        (click)="alterarStatus(tarefa)">
     </td>
     <td class="text-center" style="width: 200px">
       <a [routerLink]="['/tarefas/editar', tarefa.id]"
@@ -31,7 +32,7 @@
           aria-hidden="true"></span> Editar
       </a>
       <a href="#" title="Remover" alt="Remover" 
-        
+        (click)="remover($event, tarefa)"
         class="btn btn-xs btn-danger">
         <span class="glyphicon glyphicon-remove" 
           aria-hidden="true"></span> Remover
