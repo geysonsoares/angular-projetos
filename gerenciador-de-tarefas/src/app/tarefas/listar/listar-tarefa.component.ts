@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TarefaService, Tarefa } from '../shared';
+import { Tarefa, TarefaService } from '../shared';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-tarefa',
@@ -11,7 +13,7 @@ export class ListarTarefaComponent implements OnInit {
 
   tarefas: Tarefa[];
 
-  constructor(private tarefaService: TarefaService) { }
+  constructor(private tarefaService: TarefaService,  private router: Router) { }
 
   ngOnInit() {
     this.tarefas = this.listarTodos();
