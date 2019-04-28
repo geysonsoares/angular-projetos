@@ -116,7 +116,7 @@ export class JogoDaVelhaService {
   }
 
   cpuJogar(): void {
-    let jogada: number[] = obterJogada(this.O);
+    let jogada: number[] = this.obterJogada(this.O);
 
     if (jogada.length <= 0) {
       jogada = this.obterJogada(this.X);
