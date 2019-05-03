@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConversorComponent } from './conversor.component';
+import { MoedaService } from '../services';
+import { ConversorService } from '../services';
 
 describe('ConversorComponent', () => {
   let component: ConversorComponent;
@@ -8,7 +10,8 @@ describe('ConversorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConversorComponent ]
+      declarations: [ ConversorComponent ],
+      providers: [ ConversorService, MoedaService ]
     })
     .compileComponents();
   }));
