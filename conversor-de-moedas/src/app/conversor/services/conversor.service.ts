@@ -26,10 +26,9 @@ export class ConversorService {
     // Na linha abaixo altere a '?' por '&'
     let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
     return this.http
-      .get(this.BASE_URL + params);
-    // No Angular 6 as duas próximas linha não são mais necessárias
-    //.map(response => response.json() as ConversaoResponse)
-    //.catch(error => Observable.throw(error));
+      .get(this.BASE_URL + params)
+      .map(response => JSON.stringify(response))
+      .catch(error => Observable.throw(error));
   }
   /**
    * Retorna a cotação para dado uma response.
