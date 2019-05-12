@@ -8,13 +8,15 @@ import { MoedaService } from './services';
 import { ConversorService } from './services';
 import { NumeroDirective } from './directives/numero.directive';
 import { ModalCotacaoComponent } from './utils';
+import { DataBrPipe } from './pipes';
 
 
 @NgModule({
   declarations: [
     ConversorComponent,
     NumeroDirective,
-    ModalCotacaoComponent
+    ModalCotacaoComponent,
+    DataBrPipe
   ],
   imports: [
     CommonModule,
