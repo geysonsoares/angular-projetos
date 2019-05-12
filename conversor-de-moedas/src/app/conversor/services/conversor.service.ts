@@ -27,7 +27,7 @@ export class ConversorService {
     let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
     return this.http
       .get(this.BASE_URL + params)
-      .map(response => JSON.stringify(response))
+      .map(response => response)
       .catch(error => Observable.throw(error));
   }
   /**
@@ -69,4 +69,5 @@ export class ConversorService {
     }
     return conversaoResponse.date;
   }
+
 }

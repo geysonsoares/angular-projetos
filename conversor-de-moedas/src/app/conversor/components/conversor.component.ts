@@ -30,7 +30,7 @@ export class ConversorComponent implements OnInit {
   }
 
   init() {
-    this.conversao = new Conversao('BRL', 'USD', null);
+    this.conversao = new Conversao('EUR', 'USD', null);
     this.possuiErro = false;
   }
 
@@ -44,7 +44,5 @@ export class ConversorComponent implements OnInit {
         );
     }
   }
-
-  
 
 }
